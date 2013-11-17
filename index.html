@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap 101 Template</title>
+    <title>thoughtFull</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -49,13 +49,16 @@ body {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">(o) thoughtFull</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#about">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li style="padding-left: 510px"><a href="#contact">Settings</a></li>
+            <li><a href="#contact">Sign Out</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -63,27 +66,61 @@ body {
 
     <div class="container">
 
-        <br/><br/><br/>
+      <h2 style="font-size:28px;padding-top: 40px; padding-bottom: 40px">
+        <div style="float:left; padding-right: 20px">
+          Every week I want
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        meals that are
+        </div>
+        <div style="float:left">
+         <input width="40" style="height:100px"/>
+        </div>
+        <div style="float:left; padding-left: 20px">
+        for
+        <select>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        people
+        </div>
+        <br style="clear:both"/>
+      </h2>
+    </div>
+    <div style="border-top: 1px solid black; "> </div>
+    <div class="container">
+
+      <h1 style="font-weight: bold; padding-top: 20px;">
+        Next Week's Menu:
+      </h1>
+
+      <br/><br/><br/>
 
       <div class="row">
-        <div style="width:30%" class="col-md-3">
+        <div class="col-md-3">
           <img width="80%" src="media/237295.jpg"/>
           <br/>
           <span class="title">Morrocan Beef Stew</span>
           <br/>
           <!--<img width="80%" src="media/nutrition.gif"/>-->
         </div>
-        <div style="width:30%" class="col-md-3">
+        <div class="col-md-3">
           <img width="80%" src="media/237295.jpg"/>
           <br/>
           <span class="title">Morrocan Beef Stew</span>
         </div>
-        <div style="width:30%" class="col-md-3">
+        <div class="col-md-3">
           <img width="80%" src="media/237295.jpg"/>
           <br/>
           <span class="title">Morrocan Beef Stew</span>
         </div>
-        <div style="width:10%" class="col-md-1">.col-md-1</div>
+        <div class="col-md-3">.col-md-1</div>
       </div>
 
     </div><!-- /.container -->
