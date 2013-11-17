@@ -195,10 +195,6 @@ function toggleVisible(id) {
 
 }
 
-$(".details").mouseup(function() {
-  toggleVisible("#thing");
-})
-
 function Course(name, imageUrl, cost) {
   this.name = name;
   this.imageUrl = imageUrl;
@@ -257,12 +253,12 @@ Meal.prototype.insertHtml = function(htmlId) {
 
   mealString += '<div class="col-md-3" style="border-left: 1px solid #333; margin-top: 0px; padding-right: 0px">';
   mealString += '  <button style="float: right; margin: 0px; padding: 2px" class="btn btn-danger replacer">Replace <img width="18" src="media/replace.png"/></button>';
-  mealString += '  <button style="margin: 0px; padding: 2px" class="btn btn-info details">Details <img width="18" src="media/magnify.png"/></button>';
+  mealString += '  <button id="'+htmlId+'-details" style="margin: 0px; padding: 2px" class="btn btn-info">Details <img width="18" src="media/magnify.png"/></button>';
   mealString += '  <br/>';
   mealString += '  <div class="title" style="padding-top: 67px;float: right">$'+Math.round(this.calculateCost() * 100) / 100+'</div>';
   mealString += '</div>';
 
-  mealString += '  <div id="thing" class="hide">';
+  mealString += '  <div id="'+htmlId+'-nutrition" class="hide">';
   mealString += '    <div style="border-top: 1px solid #333; padding-top: 20px; clear:both"> </div>';
   mealString += '    <div class="col-md-3" style="padding-left: 0px"><img width="80%" src="media/nutrition.gif"/></div>';
   mealString += '    <div class="col-md-3" style="padding-left: 0px"><img width="80%" src="media/nutrition.gif"/></div>';
@@ -273,6 +269,10 @@ Meal.prototype.insertHtml = function(htmlId) {
 
   $("#meal-list").append(mealString)
   this.htmlId = '#'+htmlId;
+
+  $(this.htmlId+"-details").mouseup(function() {
+    toggleVisible("#"+htmlId+"-nutrition");
+  })
 }
 
 var mealId = 0;

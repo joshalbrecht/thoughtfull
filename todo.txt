@@ -1,23 +1,9 @@
 
 make a list of actually different meals and courses 
      tomorrow let's figure out exactly which things we want to show and collect thta info (depends on strings and target audience)
-make details work again
 make the dialog actually update the list of params
 make splash page with faces
 make total price calculate correctly	
 
 
-get single food row looking correct
-    multiple images
-    x buttons for everything
-    x button for the entire row
-    price
-    nutritional data
-    tags
-beautify header
-beautify instructional text
-make food item object
-make meal row object
-make footer:
-     buy button
-     total cost
+
