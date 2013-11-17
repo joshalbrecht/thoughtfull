@@ -25,6 +25,8 @@ body {
   text-align: center;
 }
 .row {
+    margin-right: 5px;
+    margin-left: 5px;
     padding: 20px;
     border: 1px solid black;
   -webkit-border-radius: 10px;
@@ -33,7 +35,7 @@ body {
 }
 .title {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 16px;
 }
     </style>
 
@@ -66,7 +68,7 @@ body {
 
     <div class="container">
 
-      <h2 style="font-size:28px;padding-top: 40px; padding-bottom: 40px">
+      <h2 style="font-size:28px;padding-top: 20px; padding-bottom: 20px; margin: 0px">
         <div style="float:left; padding-right: 20px">
           Every week I want
         <select>
@@ -93,34 +95,32 @@ body {
         <br style="clear:both"/>
       </h2>
     </div>
-    <div style="border-top: 1px solid black; "> </div>
+    <div style="border-top: 3px solid #555; "> </div>
     <div class="container">
-
-      <h1 style="font-weight: bold; padding-top: 20px;">
-        Next Week's Menu:
+      <h1 style="font-weight: bold; margin-top: 10px">
+        Next Week's Menu
       </h1>
-
-      <br/><br/><br/>
+    </div>
+    <div style="border-top: 1px solid #333; "> </div>
+    <div class="container" style="padding-top: 20px">
 
       <div class="row">
-        <div class="col-md-3">
-          <img width="80%" src="media/237295.jpg"/>
-          <br/>
-          <span class="title">Morrocan Beef Stew</span>
-          <br/>
+        <div class="col-md-3" style="padding-left: 0px">
+          <span class="title"><button style="float:right; margin: 0px; padding: 0px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
           <!--<img width="80%" src="media/nutrition.gif"/>-->
         </div>
-        <div class="col-md-3">
-          <img width="80%" src="media/237295.jpg"/>
-          <br/>
-          <span class="title">Morrocan Beef Stew</span>
+        <div class="col-md-3" style="padding-left: 0px">
+          <span class="title"><button style="float:right; margin: 0px; padding: 0px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
         </div>
-        <div class="col-md-3">
-          <img width="80%" src="media/237295.jpg"/>
-          <br/>
-          <span class="title">Morrocan Beef Stew</span>
+        <div class="col-md-3" style="padding-left: 0px">
+          <span class="title"><button style="float:right; margin: 0px; padding: 0px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
         </div>
-        <div class="col-md-3">.col-md-1</div>
+        <div class="col-md-3" style="border-left: 1px solid #333; margin-top: 0px; padding-right: 0px">
+          <button style="float: right; margin: 0px; padding: 0px" class="btn btn-danger">Replace <img width="18" src="media/replace.png"/></button>
+          <button style="margin: 0px; padding: 0px" class="btn btn-info">Details <img width="18" src="media/magnify.png"/></button>
+          <br/>
+          <div class="title" style="padding-top: 67px;float: right">$12.41</div>
+        </div>
       </div>
 
     </div><!-- /.container -->
