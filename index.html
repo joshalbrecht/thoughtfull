@@ -178,7 +178,7 @@ body {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Exchange</button>
+        <button id="modal-confirm" type="button" class="btn btn-primary" data-dismiss="modal">Exchange</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -360,6 +360,10 @@ $(document).ready(function(){
 
     $('.replacer').mouseup(function() {
         $('#myModal').modal();
+    });
+
+    $('#modal-confirm').mouseup(function() {
+      $("#main-input").trigger("addItem",[{"title": "vegetarian", "value": "vegetarian"}]);
     });
 });
 
