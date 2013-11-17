@@ -37,7 +37,7 @@
 (function( $, undefined ) {
 
 HARD_CODED_DATA = []
-var strings = ["healthy", "vegetarian", "paleo", "low sugar", "no wheat", "less than $10"]
+var strings = ["healthy", "vegetarian", "paleo", "low sugar", "no wheat", "less than $10", "vegan"]
 for (var i=0; i<strings.length; i++) {
   var entry = {"key": strings[i], "value": strings[i]};
   HARD_CODED_DATA.unshift(entry);

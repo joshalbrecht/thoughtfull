@@ -103,14 +103,24 @@ body {
 
       <h2 style="font-size:28px;padding-top: 20px; padding-bottom: 20px; margin: 0px">
         <div style="float:left; padding-right: 20px">
-          Every week I want
+          I want
         <select>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
+          <option value="4">5</option>
+          <option value="4">6</option>
+          <option value="4" selected>7</option>
+          <option value="4">8</option>
+          <option value="4">9</option>
+          <option value="4">10</option>
+          <option value="4">11</option>
+          <option value="4">12</option>
+          <option value="4">13</option>
+          <option value="4">14</option>
         </select>
-        meals that are
+        meals per week that are
         </div>
         <div style="float:left">
          <textarea id="main-input" name="personal-preferences" rows="4" cols="44" style="font-size: 16px"> </textarea>
@@ -141,38 +151,7 @@ body {
 
     <div class="container" id="meal-list" style="padding-top: 222px; padding-bottom: 300px">
 
-      <div class="row">
-        <div class="col-md-3" style="padding-left: 0px">
-          <span class="title"><button style="float:right; margin: 0px; padding: 2px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
-        </div>
-        <div class="col-md-3" style="padding-left: 0px">
-          <span class="title"><button style="float:right; margin: 0px; padding: 2px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
-        </div>
-        <div class="col-md-3" style="padding-left: 0px">
-          <span class="title"><button style="float:right; margin: 0px; padding: 2px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
-        </div>
-        <div class="col-md-3" style="border-left: 1px solid #333; margin-top: 0px; padding-right: 0px">
-          <button style="float: right; margin: 0px; padding: 2px" class="btn btn-danger">Replace <img width="18" src="media/replace.png"/></button>
-          <button style="margin: 0px; padding: 2px" class="btn btn-info details">Details <img width="18" src="media/magnify.png"/></button>
-          <br/>
-          <div class="title" style="padding-top: 67px;float: right">$12.41</div>
-        </div>
-        <div id="thing" class="hide">
-          <div style="border-top: 1px solid #333; padding-top: 20px; clear:both"> </div>
-          <div class="col-md-3" style="padding-left: 0px">
-              <img width="80%" src="media/nutrition.gif"/>
-          </div>
-          <div class="col-md-3" style="padding-left: 0px">
-              <img width="80%" src="media/nutrition.gif"/>
-          </div>
-          <div class="col-md-3" style="padding-left: 0px">
-              <img width="80%" src="media/nutrition.gif"/>
-          </div>
-          <div class="col-md-3" style="margin-top: 0px; padding-right: 0px">
-              <img width="80%" src="media/nutrition.gif"/>
-          </div>
-        </div>
-      </div>
+
 
     </div><!-- /.container -->
 
@@ -219,12 +198,35 @@ Meal.prototype.calculateCost = function() {
   }
   return cost;
 }
-Meal.prototype.insertHtml = function() {
-  var mealString = '<div class="row">';
+Meal.prototype.hasTag = function(tag) {
+  for (var i=0; i<this.tags.length; i++) {
+    if (this.tags[i] == tag) {
+      return true;
+    }
+  }
+  return false;
+}
+Meal.prototype.checkVisible = function(selectedTags) {
+  for (var i=0; i<selectedTags.length; i++) {
+    var tag = selectedTags[i];
+    if (!this.hasTag(tag)) {
+      if (!$(this.htmlId).hasClass('hide')) {
+        $(this.htmlId).addClass('hide');
+      }
+      return;
+    }
+  }
+  if ($(this.htmlId).hasClass('hide')) {
+    $(this.htmlId).removeClass('hide');
+  }
+}
+Meal.prototype.insertHtml = function(htmlId) {
+  var mealString = '<div class="row" id="'+htmlId+'">';
 
   for (var i=0; i<this.courses.length; i++) {
+    var course = this.courses[i];
     mealString += '<div class="col-md-3" style="padding-left: 0px">';
-    mealString += '  <span class="title"><button style="float:right; margin: 0px; padding: 2px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>';
+    mealString += '  <span class="title"><button style="float:right; margin: 0px; padding: 2px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="'+course.imageUrl+'"/>'+course.name+'</span>';
     mealString += '</div>';
   }
 
@@ -237,7 +239,7 @@ Meal.prototype.insertHtml = function() {
   mealString += '  <button style="float: right; margin: 0px; padding: 2px" class="btn btn-danger">Replace <img width="18" src="media/replace.png"/></button>';
   mealString += '  <button style="margin: 0px; padding: 2px" class="btn btn-info details">Details <img width="18" src="media/magnify.png"/></button>';
   mealString += '  <br/>';
-  mealString += '  <div class="title" style="padding-top: 67px;float: right">$12.41</div>';
+  mealString += '  <div class="title" style="padding-top: 67px;float: right">$'+Math.round(this.calculateCost() * 100) / 100+'</div>';
   mealString += '</div>';
 
   mealString += '  <div id="thing" class="hide">';
@@ -250,32 +252,65 @@ Meal.prototype.insertHtml = function() {
   mealString += '</div>';
 
   $("#meal-list").append(mealString)
+  this.htmlId = '#'+htmlId;
 }
 
-function addMeal() {
+var mealId = 0;
+var allMeals = [];
+
+function addMeal(tags) {
+  var name = tags.join(" ");
   var courses = [];
-  for (var i=0; i<3; i++) {
-    var course = new Course("Morrocan Beef Stew", "media/237295.jpg", 3.45);
+  var maxVal = 2.99 * Math.random();
+  for (var i=0; i<maxVal; i++) {
+    var course = new Course(name, "media/237295.jpg", Math.random() * 10.0);
     courses.unshift(course);
   }
-  var meal = new Meal("meal_1", courses, ["healthy", "vegan"]);
-  meal.insertHtml();
+  var htmlId = "meal-" + mealId;
+  var meal = new Meal(htmlId, courses, tags);
+  mealId += 1;
+  meal.insertHtml(htmlId);
+  allMeals.unshift(meal);
 }
 
-addMeal();
-addMeal();
-addMeal();
-addMeal();
-addMeal();
-addMeal();
-addMeal();
-addMeal();
+addMeal(["healthy", "vegan"]);
+addMeal(["healthy"]);
+addMeal(["paleo"]);
+
+function filterMeals(tags) {
+  for (var i=0; i<allMeals.length; i++) {
+    var meal = allMeals[i];
+    meal.checkVisible(tags);
+  }
+}
+
+function tagRemoveHandler(event) {
+  var tags = [];
+  var options = $("#main-input option");
+  for (var i=0; i<options.length; i++) {
+    if (event._value != options[i].value) {
+      tags.unshift(options[i].value);
+    }
+  }
+  filterMeals(tags);
+}
+
+function tagAddHandler() {
+  var tags = [];
+  var options = $("#main-input option");
+  for (var i=0; i<options.length; i++) {
+    tags.unshift(options[i].value);
+  }
+  filterMeals(tags);
+}
 
 $(document).ready(function(){
     $("#main-input").fcbkcomplete({
         json_url: "data.txt",
         addontab: true,
         height: 3,
+        onremove: tagRemoveHandler,
+        onselect: tagAddHandler,
         cache: true
     });
     $(".holder").width(350);
