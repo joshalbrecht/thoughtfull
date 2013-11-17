@@ -10,11 +10,13 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.js"></script>
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="jquery.js"></script>
+
 
     <style>
 body {
@@ -106,23 +108,55 @@ body {
 
       <div class="row">
         <div class="col-md-3" style="padding-left: 0px">
-          <span class="title"><button style="float:right; margin: 0px; padding: 0px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
-          <!--<img width="80%" src="media/nutrition.gif"/>-->
+          <span class="title"><button style="float:right; margin: 0px; padding: 2px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
         </div>
         <div class="col-md-3" style="padding-left: 0px">
-          <span class="title"><button style="float:right; margin: 0px; padding: 0px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
+          <span class="title"><button style="float:right; margin: 0px; padding: 2px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
         </div>
         <div class="col-md-3" style="padding-left: 0px">
-          <span class="title"><button style="float:right; margin: 0px; padding: 0px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
+          <span class="title"><button style="float:right; margin: 0px; padding: 2px" class="btn btn-danger"><img width="18" src="media/replace.png"/></button><img align="left" width="50%" src="media/237295.jpg"/>Morrocan <br/>Beef <br/>Stew</span>
         </div>
         <div class="col-md-3" style="border-left: 1px solid #333; margin-top: 0px; padding-right: 0px">
-          <button style="float: right; margin: 0px; padding: 0px" class="btn btn-danger">Replace <img width="18" src="media/replace.png"/></button>
-          <button style="margin: 0px; padding: 0px" class="btn btn-info">Details <img width="18" src="media/magnify.png"/></button>
+          <button style="float: right; margin: 0px; padding: 2px" class="btn btn-danger">Replace <img width="18" src="media/replace.png"/></button>
+          <button style="margin: 0px; padding: 2px" class="btn btn-info details">Details <img width="18" src="media/magnify.png"/></button>
           <br/>
           <div class="title" style="padding-top: 67px;float: right">$12.41</div>
+        </div>
+        <div id="thing" class="hide">
+          <div style="border-top: 1px solid #333; padding-top: 20px; clear:both"> </div>
+          <div class="col-md-3" style="padding-left: 0px">
+              <img width="80%" src="media/nutrition.gif"/>
+          </div>
+          <div class="col-md-3" style="padding-left: 0px">
+              <img width="80%" src="media/nutrition.gif"/>
+          </div>
+          <div class="col-md-3" style="padding-left: 0px">
+              <img width="80%" src="media/nutrition.gif"/>
+          </div>
+          <div class="col-md-3" style="margin-top: 0px; padding-right: 0px">
+              <img width="80%" src="media/nutrition.gif"/>
+          </div>
         </div>
       </div>
 
     </div><!-- /.container -->
+
+    <script language="javascript">
+
+function toggleVisible(id) {
+  if ($(id).hasClass('hide')) {
+    $(id).removeClass('hide');
+  } else {
+    $(id).addClass('hide');
+  }
+
+}
+
+$(".details")
+  .mouseup(function() {
+    toggleVisible("#thing");
+  })
+
+    </script>
 
   </body>
