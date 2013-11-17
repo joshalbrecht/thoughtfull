@@ -1,8 +1,24 @@
 
-make a list of actually different meals and courses 
-     tomorrow let's figure out exactly which things we want to show and collect thta info (depends on strings and target audience)
 make splash page with faces
 make total price calculate correctly	
+make a list of actually different meals and courses 
+     tomorrow let's figure out exactly which things we want to show and collect thta info (depends on strings and target audience)
 
+
+tags:
+  healthy
+  convenient
+  organic
+  no fish
+  low sugar
+  
+
+
+  
+
+free:
+gluten
+gmo
+  
 
 
