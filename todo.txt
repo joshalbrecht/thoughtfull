@@ -1,0 +1,24 @@
+ 
+make fbck autocomplete work with fixed list of things
+make filters apply to list of things
+then take top X
+programmatically populate the food items (from a fixed list)
+make details work again
+make splash page with faces
+make prices calculate correctly
+
+
+get single food row looking correct
+    multiple images
+    x buttons for everything
+    x button for the entire row
+    price
+    nutritional data
+    tags
+beautify header
+beautify instructional text
+make food item object
+make meal row object
+make footer:
+     buy button
+     total cost

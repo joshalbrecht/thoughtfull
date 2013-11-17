@@ -1,0 +1,5 @@
+[
+{"key": "healthy", "value": "healthy"},
+{"key": "vegetarian", "value": "vegetarian"},
+{"key": "paleo", "value": "paleo"}
+]

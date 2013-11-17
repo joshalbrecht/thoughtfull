@@ -16,6 +16,10 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
+    <script src="jquery.fcbkcomplete.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+
 
 
     <style>
@@ -109,7 +113,8 @@ body {
         meals that are
         </div>
         <div style="float:left">
-         <input width="40" style="height:100px"/>
+         <textarea id="main-input" name="personal-preferences" rows="4" cols="44" style="font-size: 16px"> </textarea>
+         <!--<input id="main-input" size="10"/>-->
         </div>
         <div style="float:left; padding-left: 20px">
         for
@@ -265,6 +270,16 @@ addMeal();
 addMeal();
 addMeal();
 addMeal();
+
+$(document).ready(function(){
+    $("#main-input").fcbkcomplete({
+        json_url: "data.txt",
+        addontab: true,
+        height: 3,
+        cache: true
+    });
+    $(".holder").width(350);
+});
 
     </script>
 
