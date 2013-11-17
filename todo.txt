@@ -1,12 +1,10 @@
 
 make a list of actually different meals and courses 
      tomorrow let's figure out exactly which things we want to show and collect thta info (depends on strings and target audience)
-make filters apply to list of things
-then take top X
 make details work again
-dialouge for switching out things you don't like
+make the dialog actually update the list of params
 make splash page with faces
-make prices calculate correctly
+make total price calculate correctly	
 
 
 get single food row looking correct
