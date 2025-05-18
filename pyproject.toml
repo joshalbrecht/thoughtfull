@@ -11,7 +11,3 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest"]
-
-[build-system]
-requires = ["uv>=0.7"]
-build-backend = "uv.build"
