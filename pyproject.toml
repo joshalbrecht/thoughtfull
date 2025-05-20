@@ -1,12 +1,24 @@
 [project]
 name = "thoughtfull"
 version = "0.1.0"
-description = "A tool for collecting slack threads, personal notes, and other data together so that it can easily be searched."
+description = "A distributed job control orchestrator for launching and managing images, sandboxes, and processes."
 requires-python = ">=3.11"
 dependencies = [
-    "pydantic",
+    "pytest-json-report",
+    "inline-snapshot",
     "loguru",
+    "modal>=1.0.1",
+    "psutil",
+    "pydantic",
+    "pydantic-settings>=2.9.1",
+    "pyre>=1.12.5",
+    "pytest",
+    "pytest-mock",
+    "pytest-mypy",
+    "pytest-timeout",
+    "ruff>=0.11.10",
     "tenacity",
+    "typer>=0.15.4",
 ]
 
 [project.optional-dependencies]

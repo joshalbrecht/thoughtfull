@@ -1,33 +1,21 @@
 # Thoughtfull
 
-Thoughtfull is an in-progress tool for aggregating Slack threads, personal notes, and other reference material in a single searchable database.
+Thoughtfull is a distributed job control orchestrator.
 
-## Overview
-
-The goal of this project is to make it easy to collect snippets of information from multiple sources and retrieve them quickly. It is still in the early stages, so expect the details to change as the design evolves.
+It is designed to manage images, sandboxes, and processes running locally or in the cloud.
 
 ## Features
 
-- Import posts and conversations from Slack threads
-- Store personal notes and other text documents
-- Unified search across all stored material
+- Create and manage images, sandboxes, and both local and remote processes
+- Snapshot existing sandboxes and restore them later
+- Easily connect to any running sandbox or process
+- Runs processes in tmux in order to collect output from interactive processes (while enabling stdin)
+- Supports fully hierarchical trees of sandboxes and processes with "structured concurrency" semantics
+- Continually syncs logs and output from remote processes
+- Support modal, fly.io, docker, and "local" sandboxes
 
-## Getting Started
+# Architecture
 
-At the moment the project does not yet provide a packaged release. To experiment with it you will need to clone the repository and build from source once code is available:
-
-```bash
-# Clone the repository
-git clone https://github.com/yourname/thoughtfull.git
-cd thoughtfull
-```
-
-Further instructions will be added here as the implementation progresses.
-
-## Contributing
-
-Contributions are welcome. Feel free to open issues or submit pull requests with improvements and bug fixes.
-
-## License
-
-This project will eventually be released under an open source license. The specific license will be added once the code base matures.
+- Uses tmux to run processes remotely in a way where they can be attached to later
+- Uses rsync to sync files and directories between local and remote machines
+- Uses SSH to connect to remote machines
