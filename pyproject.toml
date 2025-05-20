@@ -21,6 +21,9 @@ dependencies = [
     "typer>=0.15.4",
 ]
 
+[project.scripts]
+thoughtfull = "thoughtfull.main:app"
+
 [project.optional-dependencies]
 test = ["pytest"]
 
